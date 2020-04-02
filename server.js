@@ -12,9 +12,9 @@ const app = express()
 // app.use(bodyParser.urlencoded({ extended: false }))
 // app.use(bodyParser.json())
 
-// const mongoose = require('mongoose')
-// mongoose.connect('mongodb://localhost:27017/whiteboard-cs4500-sp20',
-//     { useNewUrlParser: true, useUnifiedTopology: true })
+const mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost:27017/whiteboard-cs4500-sp20',
+    { useNewUrlParser: true, useUnifiedTopology: true })
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin",
