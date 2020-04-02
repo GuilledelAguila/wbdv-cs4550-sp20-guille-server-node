@@ -10,6 +10,7 @@ const questionsSchema = mongoose.Schema({
         type: String,
         enum: ['TRUE_FALSE','MULTIPLE_CHOICE','ESSAY','FILL_BLANKS'],
     },
-    choices: [String]
+    choices: [String],
+    answer: String
 }, {collection: 'questions'})
 module.exports = questionsSchema

@@ -8,9 +8,9 @@ const app = express()
 //     secret: 'any string'
 // }));
 
-// var bodyParser = require('body-parser')
-// app.use(bodyParser.urlencoded({ extended: false }))
-// app.use(bodyParser.json())
+var bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost:27017/whiteboard-cs4500-sp20',
@@ -29,6 +29,7 @@ app.use(function(req, res, next) {
 
 require('./controllers/quiz.controller.server')(app)
 require('./controllers/question.controller.server')(app)
+require('./controllers/quiz-attempts.controller.server')(app)
 // require('./controllers/users.controller.server')(app)
 
 
